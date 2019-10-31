@@ -1,5 +1,5 @@
-#ifndef DEFINE_BHASSEMBLY
-#define DEFINE_BHASSEMBLY
+#ifndef DEFINE_MATASSEMBLY
+#define DEFINE_MATASSEMBLY
 #include "DifferenceOperator.h"
 
 /*
@@ -20,8 +20,16 @@
 	shrink above inner grid points from 2D to 1D sequence according to the j-principal order [(j-2)(Nx-1)+i] 
 */
 
-void assemble_biharmonic_matrix(Scalar** C, Scalar* ls1, Scalar* ls2, int** I, int** J, Scalar** K, int Nx, int Nz, Scalar DX, Scalar DZ);
+void assemble_biharmonic_matrix_4th(Scalar** BH, Scalar* ls1, Scalar* ls2, int** I, int** J, Scalar** K, int Nx, int Nz);
 
-void free_biharmonic_matrix(int** I, int** J, Scalar** K, int Nx, int Nz);
+void assemble_laplacian_matrix_4th(Scalar** LAP, Scalar* ls1, Scalar* ls2, int** I, int** J, Scalar** K, int Nx, int Nz);
+
+void assemble_biharmonic_matrix_2nd(Scalar** BH, Scalar* ls1, Scalar* ls2, int** I, int** J, Scalar** K, int Nx, int Nz);
+
+void assemble_laplacian_matrix_2nd(Scalar** LAP, Scalar* ls1, Scalar* ls2, int** I, int** J, Scalar** K, int Nx, int Nz);
+
+void free_biharmonic_matrix(Scalar** BH, int* I, int* J, Scalar* K);
+
+void free_laplacian_matrix(Scalar** LAP, int* I, int* J, Scalar* K);
 
 #endif

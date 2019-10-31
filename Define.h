@@ -6,7 +6,12 @@
 typedef double Scalar;
 
 extern Scalar R;
+extern Scalar L;
+extern Scalar H;
+extern int Nx;
+extern int Nz;
 
-Scalar Ls(Scalar x);
+void assemble_ls_array(Scalar** ls1, Scalar** ls2, int Nx);
+
 
 #endif

@@ -8,7 +8,7 @@ void free_biharmonic_4th_center(Scalar** C) {
 	free(C);
 }
 
-void biharmonic_4th_center(Scalar*** C, Scalar DZ, Scalar DX) {
+void biharmonic_4th_center(Scalar*** C, Scalar DX, Scalar DZ) {
 	(*C) = (Scalar**)malloc(5 * sizeof(Scalar*));
 	for (int i = 0; i < 5; i++) {
 		(*C)[i] = (Scalar*)calloc(5, sizeof(Scalar)); // init 0;
@@ -33,7 +33,7 @@ void free_laplacian_4th_center(Scalar** L) {
 	free(L);
 }
 
-void laplacian_4th_center(Scalar*** L, Scalar DZ, Scalar DX) {
+void laplacian_4th_center(Scalar*** L, Scalar DX, Scalar DZ) {
 	(*L) = (Scalar**)malloc(5 * sizeof(Scalar*));
 	for (int i = 0; i < 5; i++) {
 		(*L)[i] = (Scalar*)calloc(5, sizeof(Scalar)); // init 0;
@@ -46,4 +46,4 @@ void laplacian_4th_center(Scalar*** L, Scalar DZ, Scalar DX) {
 	(*L)[3][2] = 16. / 12.*DZ2i;
 	(*L)[4][2] = -1. / 12.*DZ2i;
 	std::cout << "assign 4th order laplacian difference operator matrix" << std::endl;
-}
+}  

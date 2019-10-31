@@ -9,11 +9,11 @@
 		*	*	*	*	*
 		*	*	*	*	*
 */
-void biharmonic_4th_center(Scalar*** C, Scalar DZ, Scalar DX);
+void biharmonic_4th_center(Scalar*** C, Scalar DX, Scalar DZ);
 void free_biharmonic_4th_center(Scalar** C);
 
 
-void laplacian_4th_center(Scalar*** L, Scalar DZ, Scalar DX);
+void laplacian_4th_center(Scalar*** L, Scalar DX, Scalar DZ);
 void free_laplacian_4th_center(Scalar** L);
 
 #endif
